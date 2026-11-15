@@ -46,7 +46,7 @@ structured result or `ToolError` out) → `services/` (business rules) → `stor
   sessions (`orchestration/`).
 - The Claude client is injected via a `Protocol`, so unit tests use a fake client
   (`tests/fakes.py`). Tests that hit the real API are marked `live`.
-- Model comes from `WORKPILOT_MODEL` (default `claude-opus-5-5`). Check SDK calls against current docs, not
+- Model comes from `WORKPILOT_MODEL` (default `claude-sonnet-5-5`). Check SDK calls against current docs, not
   memory. Several APIs changed after the exam guide was written.
 
 ## Documentation is part of every change

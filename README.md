@@ -39,7 +39,7 @@ uv run ruff check . && uv run ruff format .
 | Variable | Required | Default | Purpose |
 |---|---|---|---|
 | `ANTHROPIC_API_KEY` | yes | none | Claude API key |
-| `WORKPILOT_MODEL` | no | `claude-opus-5-5` | Model used by WorkPilot (`claude-haiku-5-5` is cheaper) |
+| `WORKPILOT_MODEL` | no | `claude-sonnet-5-5` | Model used by WorkPilot (`claude-opus-5-5` is more capable, `claude-haiku-5-5` is cheaper) |
 
 ## Documentation
 

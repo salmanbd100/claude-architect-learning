@@ -20,7 +20,7 @@ def test_model_has_a_default(monkeypatch: pytest.MonkeyPatch) -> None:
 
     settings = Settings(_env_file=None)  # type: ignore[call-arg]
 
-    assert settings.workpilot_model == "claude-opus-5-5"
+    assert settings.workpilot_model == "claude-sonnet-5-5"
 
 
 def test_missing_api_key_fails_fast(monkeypatch: pytest.MonkeyPatch) -> None:

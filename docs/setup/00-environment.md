@@ -54,15 +54,17 @@ Key decisions:
 - **`SecretStr`** for the API key, so it prints as `**********` in logs and tracebacks.
 - **The key is passed explicitly** to `anthropic.Anthropic(api_key=...)`. pydantic-settings reads `.env` into
   `Settings` but does not export values to `os.environ`, where the SDK would otherwise look.
-- **Iterate over `response.content`** and pick the `text` block. With Opus 5.5 the first block is
-  `thinking`.
+- **Iterate over `response.content`** and pick the `text` block. On current models (Opus 5.5, Sonnet 5.5)
+  thinking is on by default, so the first block can be `thinking`.
+- **Default model is `claude-sonnet-5-5`** ($2/$10 per million tokens, half of Opus 5.5) and can be changed
+  with `WORKPILOT_MODEL`. The sample output below was recorded on Opus 5.5.
 
 ## 7. Important Python concepts
 
 | Python | TypeScript equivalent |
 |---|---|
 | `class Settings(BaseSettings):` | `class Settings extends BaseSettings` |
-| `workpilot_model: str = "claude-opus-5-5"` (class annotation) | a Zod field with `.default(...)` |
+| `workpilot_model: str = "claude-sonnet-5-5"` (class annotation) | a Zod field with `.default(...)` |
 | `def main() -> None:` | `function main(): void` |
 | `f"tokens: {n}"` | `` `tokens: ${n}` `` |
 | `from workpilot.config import get_settings` | `import { getSettings } from "workpilot/config"` |
