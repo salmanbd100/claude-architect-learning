@@ -1,0 +1,37 @@
+[project]
+name = "workpilot"
+version = "0.1.0"
+description = "A Claude-powered personal work assistant, built to learn the CCAR-F curriculum"
+readme = "README.md"
+authors = [
+    { name = "Salman", email = "md.salman@cefalo.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "anthropic>=2.8.0",
+    "pydantic-settings>=2.16.3",
+]
+
+[project.scripts]
+workpilot = "workpilot:main"
+
+[build-system]
+requires = ["uv_build>=0.13.8,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+    "ruff>=0.17.5",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["live: calls the real Claude API (costs money; skip with -m 'not live')"]
+
+[tool.ruff]
+line-length = 110
+
+[tool.ruff.lint]
+# E/F: errors and pyflakes, I: import sorting, UP: modern syntax, B: common bugs
+select = ["E", "F", "I", "UP", "B"]
