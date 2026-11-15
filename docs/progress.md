@@ -9,13 +9,13 @@ A lesson is *Completed* only when it is implemented, runs, has passing tests, an
 
 | Step | Status | Date | Notes |
 |---|---|---|---|
-| Stage 0: environment setup | In progress | 2026-11-15 | Implemented and verified (4 tests pass, ruff clean, first live call: end_turn). Check questions pending |
+| Stage 0: environment setup | Completed | 2026-11-15 | 4 tests pass, ruff clean, first live call: end_turn. Check questions answered; revisit why `.venv/` is not committed (machine-specific binaries, rebuilt from uv.lock) |
 
 ## Lessons (listed in study order)
 
 | Study # | Domain | Lesson | Status | Date | Notes |
 |---|---|---|---|---|---|
-| 1 | D1 | 1.1 Agentic Loops | Not started | | |
+| 1 | D1 | 1.1 Agentic Loops | Not started | | Next up |
 | 2 | D2 | 2.1 Tool Interface Design | Not started | | |
 | 3 | D2 | 2.2 Structured Error Responses | Not started | | |
 | 4 | D2 | 2.3 Tool Distribution & Tool Choice | Not started | | |
